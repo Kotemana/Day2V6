@@ -8,7 +8,7 @@ namespace Day2
         {
             //SimpleIfExample();
             //SwitchExample();
-            //AndOrExample();
+            AndOrExample();
 
         }
 
