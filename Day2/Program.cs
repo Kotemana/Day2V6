@@ -7,11 +7,48 @@ namespace Day2
         static void Main(string[] args)
         {
             //SimpleIfExample();
-            SwitchExample();
-            AndOrExample();
+            //SwitchExample();
+            //AndOrExample();
+
+            var startNumber = GetNumberFromUser("Enter start number");
+            var endNumber = GetNumberFromUser("Enter end number");
+
+            ForExample(startNumber, endNumber);
+
 
         }
 
+        private static int GetNumberFromUser(string question)
+        {
+            Console.WriteLine(question);
+            bool isResultValid = false;
+            int result = 0;
+            while (!isResultValid)
+            {
+                if (int.TryParse(Console.ReadLine(), out result))
+                {
+                    isResultValid = true;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter valid number");
+                }
+            }
+
+            return result;
+        }
+
+        private static void ForExample(int start, int end)
+        {
+            int sum = 0;
+            for (int i = start; i <= end; i++)
+            {
+                sum += i;
+                Console.WriteLine($"Current number {i}, sum so far {sum}");
+            }
+
+            Console.WriteLine($"sum of all numbers between {start} and {end} equals {sum}");
+        }
         private static void SimpleIfExample()
         {
             Console.WriteLine("I've heard you are making LARPS. Enter your name:");
